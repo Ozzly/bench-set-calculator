@@ -35,17 +35,22 @@
             let weight_HTML = '';
 
             table_HTML = '';
-            for (let i=0; i < percentages.length; i++) {
-                table_HTML += `<tr id="weight_list_item_${i}"><td>${(percentages[i] * max_bench_input).toFixed(2)}</td>
-                                <td>${(((percentages[i] * max_bench_input) - 20) / 2).toFixed(2)}</td>
-                                <td>${reps[i]}</td>
-                                <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="checkbox_list_item_${i}" onchange="mark_complete(${i})">
-                                    </div>
-                                </td></tr>`
+            if (!max_bench_input == '') {
+                for (let i=0; i < percentages.length; i++) {
+                    table_HTML += `<tr id="weight_list_item_${i}"><td>${(percentages[i] * max_bench_input).toFixed(2)}</td>
+                                    <td>${(((percentages[i] * max_bench_input) - 20) / 2).toFixed(2)}</td>
+                                    <td>${reps[i]}</td>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox_list_item_${i}" onchange="mark_complete(${i})">
+                                        </div>
+                                    </td></tr>`
+                }
+                checklist.innerHTML = table_HTML;
+            } else {
+                checklist.innerHTML = "";
             }
-            checklist.innerHTML = table_HTML;
+            
         }
 
         function mark_complete(id){
