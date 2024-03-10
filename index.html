@@ -6,6 +6,7 @@
     <title>Bench Calc</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js"></script>
 </head>
 <body data-bs-theme="dark">
     <div style="width: 250px; margin: 0 auto;">
@@ -23,11 +24,18 @@
             <tbody id="checklist">
             </tbody>
         </table>
+        <div style="margin-top: 20px;">
+            <spline-viewer url="https://prod.spline.design/BAwOZ6yJ98wCm0C4/scene.splinecode" style="width: 100%; height: 400px;"></spline-viewer>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <spline-viewer url="https://prod.spline.design/MIBX9tCELv1U3dZH/scene.splinecode" style="width: 100%; height: 400px;"></spline-viewer>
+        </div>
 
     </div>
     <script>
-        let percentages = [0.33, 0.56, 0.79, 0.86, 0.91, 0.96, 0.91, 0.91, 0.86, 0.79];
-        let reps = [10, 10, 5, 3, 1, 1, 1, 1, 3, 5]
+        let percentages = [0.33, 0.56, 0.79, 0.86, 0.91, 0.96, 0.91, 0.91, 0.86, 0.79, 0.56];
+        let reps = [10, 10, 5, 3, 1, 1, 1, 1, 3, 5, 10]
         let checklist = document.getElementById('checklist');
         function fill_checklist() {
             checklist.innerHTML = "";
